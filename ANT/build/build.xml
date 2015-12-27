@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hometask" default="copy" basedir=".">
+<target name="create" depends="delete" >
+<mkdir dir="src"></mkdir>
+<mkdir dir="bin"></mkdir>
+<mkdir dir="lib"></mkdir>
+
+</target>
+
+<target name="delete">
+<delete dir="src"></delete>
+<delete dir="bin"></delete>
+<delete dir="lib"></delete></target>
+
+
+<target name="compile" depends="create">
+
+<javac srcdir="C:\Users\Ahsan Khan\Desktop\anttask\src\anttask"
+ destdir="C:\Users\Ahsan Khan\Desktop\anttask\ANT\build\bin"></javac>
+</target>
+
+
+<target name="run" depends="compile">
+<java classname="test" >
+<classpath path="C:\Users\Ahsan Khan\Desktop\anttask\ANT\build\bin"></classpath></java>
+</target>
+
+
+<target name="copy">
+
+<copydir dest="C:\Users\Ahsan Khan\Desktop\anttask\ANT\build\lib" 
+			src="C:\Users\Ahsan Khan\Desktop\anttask\ANT\build\bin"/>
+
+<copy todir="C:\Users\Ahsan Khan\Desktop\anttask\ANT\build\lib"></copy>
+<fileset dir="C:\Program Files\Java\jre7" includes="**lib/**">
+		</fileset>
+
+</target>
+
+
+</project>
